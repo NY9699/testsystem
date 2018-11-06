@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翡翠掌学</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/xnzx.css">
+    <script src="jq/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".layer img").delay(3000).animate({"margin-top":100},600,"swing");
+            $(".layer p").delay(4000).animate({"opacity":1},600,"swing");
+            $(".layer h1").delay(3500).animate({"opacity":1},600,"swing");
+            $(".layer").delay(8000).animate({"margin-top":-1500},500);
+
+            $(".prev").click(
+                    function() {
+                        if ($(".cont2-center").position().left > -1100) {
+                            $(".cont2-center").animate({"left": 0})
+                        }else {
+                            $(".cont2-center").animate({"left": ($(".cont2-center").position().left +1100)})
+                        }
+                    }
+            );
+            console.log($(".cont2-center").position().left);
+            $(".next").click(
+                    function(){
+                        if ($(".cont2-center").position().left<=-1100){
+                            $(".cont2-center").animate({"left": -2200})
+                        }else {
+                            $(".cont2-center").animate({"left":($(".cont2-center").position().left-1100)})
+                        }
+                    }
+            );
+
+           /* console.log($(".ul2").offset().left-$(".gs").width());*/
+            /*$(".cont").css({"height":$(document.body).height()});*/
+
+            var screenW, screenH;
+            var page = 0;
+            function resize(){
+                // 获取屏幕宽高
+                screenW = $(document.body).width();
+                screenH = $(document.body).height();
+                  console.log(screenH, screenW);
+
+//                 console.log($(".screen-one").size());
+                $(".content").css({"width":screenW,"height":screenH*$(".cont").size()});
+                $(".warp").css({"width":"screenW","height":screenH});
+
+                for (var i = 0; i < $(".cont").size(); i++) {
+                    $(".cont").css({"width":screenW,"height":screenH})
+                }
+
+                $(".content").css("top", -page * screenH)
+            }
+            resize();
+            window.onresize = resize;//动态获取宽高
+
+            var isRunning = false;
+            for (let i = 0; i < $(".li").size(); i++) {
+                $(".li").eq(i).click(function(){
+                    page=i;
+                    console.log(page);
+                    $(".content").css({"top":-page*screenH});
+                    for (var j = 0; j < $(".li").size(); j++) {
+                        $(".li").removeClass("active");
+                    }
+                    $(this).addClass("active")
+                })
+
+            }
+            function scrollUp() {
+
+                if(!isRunning){
+                    isRunning = true;
+                    // 設置定時器  儅1秒之後  滾軸繼續可以使用
+                    setTimeout(function(){
+                        isRunning = false;
+                    },1000);
+                    if (page >0) {
+                        page--;
+                        $(".content").css({"top":-page* screenH});
+                        for (var j = 0; j < $(".li").size(); j++) {
+                            $(".li").removeClass("active");
+                        }
+                        $(".li").eq(page).addClass("active");
+                    }
+                }
+            }
+
+            function scrollDown() {
+                if(!isRunning) {
+                    isRunning = true;
+                    setTimeout(function(){
+                        isRunning = false;
+
+                    },1000);
+                    if (page < $(".cont").size() - 1) {
+                        page++;
+                        $(".content").css({"top":-page * screenH });
+                        for (var j = 0; j < $(".li").size(); j++) {
+                            $(".li").removeClass("active");
+                        }
+                        $(".li").eq(page).addClass("active");
+                    }
+                }
+            }
+
+            addEvent(window, "mousewheel", mouseWheel);
+// ff
+            addEvent(window, "DOMMouseScroll", mouseWheel);
+
+
+// 滚轴事件函数
+            function mouseWheel(ev) {
+//            console.log(ev);
+                var oEvent = window.event || ev;
+                if (oEvent.detail) {
+                    if (oEvent.detail > 0) {
+                        scrollDown()
+                    } else {
+                        scrollUp()
+                    }
+                } else if (oEvent.wheelDelta) {
+                    if (oEvent.wheelDelta > 0) {
+                        scrollUp()
+                    } else {
+                        scrollDown()
+                    }
+                }
+            }
+            function addEvent(ele, type, listener) {
+                if (ele.addEventListener) {
+                    ele.addEventListener(type, listener);
+                } else {
+                    ele.attachEvent("on" + type, listener);
+                }
+            }
+
+            $(".left").parent().click(
+                    function(){
+                        $("ol li").removeClass("now");
+                        $(".cont4-txt").animate({"left":0});
+                        $(this).addClass("now");
+                    }
+            );
+            $(".right").parent().click(
+                    function(){
+                        $("ol li").removeClass("now");
+                        $(".cont4-txt").animate({"left":-890});
+                        $(this).addClass("now");
+                    }
+            );
+
+        })
+    </script>
+</head>
+<body>
+<div class="layer">
+        <div class="inner">
+            <img src="images/翡翠掌学/xiaoniao_welcome_icon2.gif">
+            <h1>小鸟掌学</h1>
+            <p style="margin-top: 5px">Xiaoniao School</p>
+            <p class="p1"><i class="zuo"></i>学我所用，学以致用
+                <i class="you"></i></p>
+            <p>还在为培训而苦恼吗？翡翠掌学帮助企业建立自己的企业学校 <br>实现：全民全学、全民全校、全民全智（比拼式学习）！</p>
+        </div>
+    </div>
+<header>
+        <div class="inner">
+            <img src="images/翡翠掌学/logo.png">
+            <ul class="ul1 fr">
+                <li class="now">概述</li>
+                <li class="li active">对企业的价值</li>
+                <li class="li">翡翠掌云</li>
+                <li class="li">App下载</li>
+                <li class="li">联系客服</li>
+                <li class="li">返回首页</li>
+            </ul>
+        </div>
+</header>
+<div class="warp">
+<div class="content">
+    <div class="cont1 cont">
+            <div class="inner">
+                <div class="banner">
+                    <img src="images/翡翠掌学/xiaoniao_welcome_icon3.gif" alt="">
+                    <h1>小鸟掌学</h1>
+                    <p style="margin-top: 5px">Xiaoniao School</p>
+                    <p class="p1">
+                        <i class="zuo"></i>学我所用，学以致用
+                        <i class="you"></i>
+                    </p>
+                    <p>还在为培训而苦恼吗？翡翠掌学帮助企业建立自己的企业学校 <br>实现：全民全学、全民全校、全民全智（比拼式学习）！</p>
+                </div>
+            </div>
+        </div>
+    <div class="cont2 cont">
+        <div class="zy">
+            <i class="prev"></i>
+            <i class="next"></i>
+        </div>
+        <div class="inner">
+            <div class="cont2-center">
+                <div class="cont2-cont1">
+                    <h2>概述</h2>
+                    <p class="p2">
+                        <i class="zuo"></i>
+                        翡翠掌学，起源服务于专业技术人员继续教育基地的在线培训平台，受到客户与社会的密切关注与欢迎。卓新思创有限责任公司负责翡翠掌学的运营、推广和研发等工作。
+                        <i class="you"></i>
+                    </p>
+                    <ul class="ul2">
+                        <li><img src="images/翡翠掌学/app_img01.jpg"></li>
+                        <li><img src="images/翡翠掌学/app_img02.jpg"></li>
+                        <li><img src="images/翡翠掌学/app_img03.jpg"></li>
+                        <li><img src="images/翡翠掌学/app_img04.jpg"></li>
+                    </ul>
+                </div>
+                <div class="cont2-cont1">
+                    <div class="title"></div>
+                    <ul class="ul5">
+                        <li><i class="i2 deng"></i>
+                            <p class="p5">
+                                <span class="span1">我们的愿景：</span><br>
+                                <span class="span2">成为中国最强、最大的中小微型企业定制在线学习服务供应商！</span>
+                            </p>
+                        </li>
+                        <li><i class="i2 shu"></i>
+                            <p class="p5">
+                                <span class="span1">我们做的是“新学习、新媒体”！</span>
+                            </p>
+                        </li>
+                        <li><i class="i2 lou"></i>
+                            <p class="p5">
+                                <span class="span1">帮助企业建立自己的企业学校</span><br>
+                                <span class="span2">实现：全民全学、全民全校、全民全智（比拼式学习）！</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cont2-cont1">
+                    <div class="title"></div>
+                    <p class="p1"><i class="zuo"></i>学我所用，学以致用
+                        <i class="you"></i></p>
+                    <p class="p6">
+                        随着智能手机应用，微学习（即微观背景下的学习）已经开始飞速蔓延，通过对学习内容或者学习时间进行分割，使学员队学习内容进行碎片化的学习，在企业内它可以正式或随意的方式推送给学员。作为一种人才培养方式，微课能较好的补充尸体培训中无法实现的可移动性、持续性、重复性、随机随地等不足。这有助于企业建立规范的培养体系，提高全员素质，从而达到提升企业经济效益，并建立一支忠诚善战的员工队伍。
+                    </p>
+                    <div class="mouse1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cont3 cont">
+        <h2>翡翠掌学对企业的价值</h2>
+        <div class="inner">
+            <div class="qy">
+                <i class="lt"></i>
+                <i class="rt"></i>
+                <i class="rb"></i>
+                <i class="lb"></i>
+                <ul class="ul3 clear">
+                    <li>
+                        <i class="no">No.1</i>
+                        <p>帮助企业转变为学习型组织，促进全员持续学习；</p>
+                    </li>
+                    <li>
+                        <i class="no">No.2</i>
+                        <p>加速企业内部知识的传播，提高管理、操作和经验技巧的传承；</p>
+                    </li>
+                    <li>
+                        <i class="no">No.3</i>
+                        <p>营造企业比拼式学习氛围，挖掘实战精华</p>
+                    </li>
+                    <li>
+                        <i class="no">No.4</i>
+                        <p>降低企业培训的时间和金钱成本 ，提高培训效率和培训质量；</p>
+                    </li>
+                    <li>
+                        <i class="no">No.5</i>
+                        <p>增加凝聚力，提高员工的忠诚度，做到“上下同欲”；</p>
+                    </li>
+                    <li>
+                        <i class="no">No.6</i>
+                        <p>增强企业供应商、经销商的知识技能的提高，形成“供应链学习模式”；</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cont4 cont">
+        <div class="inner">
+            <h2>翡翠掌云</h2>
+            <div class="cont4-cont">
+                <div class="cont4-txt">
+                    <ul class="ul4">
+                        <li class="p3">“翡翠学院”云平台是一套完整的专家知识、学习管理、监督考核系统。首先根据企业和员工的特性，抓取学习需求，然</li>
+                        <li>后从“平台学习库、行业学习库和企业内训库”中调出教学资源，按学习计划“推送”任务给每一位员工，并对学习过程进行</li>
+                        <li>监管，对学习效果进行评估，根据学习情况调整学习计划，不断优化员工的职业生涯。</li>
+                        <li class="p3">“翡翠学院”主要基于智能手机平台进行学习。针对性、趣味性、创新性的学习方式有助于员工建立学习兴趣，将学习与</li>
+                        <li>趣味相结合，提高学习吸收率。提高员工技能，增加企业效益。</li>
+                        <li>&nbsp;</li>
+                        <li>“翡翠学院”云平台是企业战略变革的工具；</li>
+                        <li>“翡翠学院”云平台是企业文化重要的组成部分；</li>
+                        <li>“翡翠学院”云平台是企业培训的重要支撑手段和实施保障机制；</li>
+                        <li>“翡翠学院”云平台是企业上下游意识形态统一的桥梁；</li>
+                        <li>“翡翠学院”云平台是企业经验分享的平台；</li>
+                    </ul>
+                    <ul class="ul4">
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li class="p3">“小鸟掌学”云平台本质上是一种正规化教学管理机制，但它更突破了时间、地域、成本、固定性的限制（绝非在线浏览网</li>
+                        <li>页，看电子书籍和一些视音频上）。“小鸟掌学”改变了企业现有培训的“双高困局”（高成本、高误工），实现了 “双低学习</li>
+                        <li>模式”（低成本、低误工）。</li>
+                        <li>&nbsp;</li>
+                        <li class="p3">当今，科学技术迅猛发展，社会文化不断进步，“终身教育、终身学习”将被越来越多的人所认识。面对未来，小鸟掌学将</li>
+                        <li>不断努力，以一流的运营和服务，成为企业首选的、长期的、可信赖的学习资源提供商、运营服务提供商，为社会各行各业的发</li>
+                        <li>展和国家经济实力的增强，做出新的贡献。</li>
+                    </ul>
+                </div>
+            </div>
+            <ol>
+                <li class="now"><i class="i1 left"></i></li>
+                <li><i class="i1 right"></i></li>
+            </ol>
+            <div class="mouse">
+
+            </div>
+        </div>
+    </div>
+    <div class="cont5 cont">
+        <div class="inner">
+            <div class="ewm">
+                <p class="p4">
+                    扫我下载“翡翠掌学”App
+                </p>
+                <img src="images/翡翠掌学/app_downcode.png" alt="">
+            </div>
+            <p class="app">
+                App下载
+            </p>
+            <div class="kf">
+                <h3>联系客服妹纸</h3>
+                <p>总机：010-8888888</p>
+                <p>邮箱：cp@feicuiedu.com</p>
+                <p>北京市昌平区站前东街2号 回龙观田园风光综合商业楼3层</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

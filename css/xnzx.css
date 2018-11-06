@@ -1,0 +1,444 @@
+body,html{
+    font-family: 楷体;
+    overflow: hidden;
+    height: 100%;
+}
+/*=====layer=======*/
+.layer{
+    z-index: 199;
+    height: 100%;
+    width: 100%;
+    background: #2999d6;
+    position: absolute;
+    color: #ffffff;
+}
+.warp {
+    overflow: hidden;
+    position: relative;
+}
+
+.ul1 .active{
+    color: yellow;
+}
+.layer img{
+    display: block;
+    margin: 200px auto;
+}
+.layer h1,.layer p,.banner h1,.banner p{
+    margin: auto;
+    text-align: center;
+}
+.layer h1,.layer p{
+    opacity: 0;
+}
+.layer h1,.banner h1{
+    margin-top: -30px;
+    font-size: 44px;
+}
+.layer .p1,.banner .p1{
+    font-size: 48px;
+    position: relative;
+}
+.layer p,.banner p{
+    margin-top: 30px;
+    font-size: 20px;
+}
+/*=====header=======*/
+header{
+    background: url("../images/翡翠掌学/beader_bg.jpg") center no-repeat;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+.inner{
+    width: 1100px;
+    margin: auto;
+}
+.ul1{
+    margin-right: 300px;
+}
+.ul1 li{
+    float: left;
+    color: #ffffff;
+    margin-left: 30px;
+    font-size: 16px;
+    line-height: 50px;
+    opacity: 0.7;
+}
+.ul1 li.now,.ul1 li:hover{
+    opacity: 1;
+}
+/*=====cont1=======*/
+.content{
+    width: 100%;
+    top: 0;
+    position: absolute;
+    transition: top 0.5s;
+    margin-top: -10px;
+}
+
+.cont1{
+    background: #221236;
+}
+
+.banner{
+    overflow: hidden;
+    color: #ffffff;
+}
+.banner img{
+    display: block;
+    margin: 100px auto;
+}
+.banner h1{
+  margin-top: -100px;
+}
+.zuo,.you{
+    position: absolute;
+    height: 18px;
+    width: 20px;
+}
+.zuo{
+    background: url("../images/翡翠掌学/yinhao1_zuo.png");
+    left: 28%;
+}
+.you{
+    background: url("../images/翡翠掌学/yinhao1_you.png");
+    top: 50px;
+}
+/*=======cont2======*/
+.cont2{
+    position: relative;
+    padding-top: 50px;
+}
+.cont2 .p1{
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+.cont2 .p1 .zuo{
+    background: url("../images/翡翠掌学/yinhao3_zuo.png")no-repeat;
+}
+.cont2 .p1 .you{
+    background: url("../images/翡翠掌学/yinhao3_you.png")no-repeat;
+}
+.cont2 .p6{
+    text-indent: 2em;
+    width: 650px;
+    line-height: 30px;
+    margin: auto;
+}
+.mouse1{
+    background: url("../images/翡翠掌学/scrollon01.jpg")no-repeat;
+    height: 170px;
+    width: 104px;
+    margin: 100px auto;
+}
+.cont h2{
+    text-align: center;
+    color: #311859;
+    font-size: 54px;
+    margin-top: 70px;
+}
+.cont2 .inner{
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.cont2 .p2{
+    font-size: 18px;
+    color: #6b6a6f;
+    width: 640px;
+    text-indent:2em;
+    margin: 70px auto;
+    position: relative;
+}
+.cont2 .cont2-cont1{
+    float: left;
+    width: 1100px;
+}
+.cont2 .cont2-center{
+    width: 3310px;
+    position: absolute;
+    left: 0;
+}
+.title{
+    background: url("../images/翡翠掌学/bird_title.png")no-repeat;
+    height: 38px;
+    width: 502px;
+    margin:auto;
+    margin-top: 150px;
+}
+.cont2 .p2 .zuo{
+    background: url("../images/翡翠掌学/yinhao2_zuo.png");
+    left: -50px;
+}
+.ul5{
+    margin-top: 100px;
+}
+.ul5 li{
+    margin-top: 70px;
+}
+.i2{
+    display:block;
+    vertical-align: middle;
+    height: 99px;
+    width: 98px;
+    float: left;
+}
+.deng{
+    background: url("../images/翡翠掌学/yuanjin_icon.png")no-repeat;
+}
+.shu{
+    background: url("../images/翡翠掌学/book_icon.png")no-repeat;
+}
+.lou{
+    background: url("../images/翡翠掌学/school_icon.png")no-repeat;
+}
+.p5{
+    margin-left: 150px;
+    padding-top: 20px;
+}
+.span1{
+    font-size: 24px;
+    line-height: 35px;
+}
+.cont2 .p2 .you{
+    background: url("../images/翡翠掌学/yinhao2_you.png");
+    right: -50px;
+}
+.ul2 li{
+    float: left;
+    width: 275px;
+}
+.ul2{
+    width: 1100px;
+    float: left;
+}
+.gs{
+    margin-top: 200px;
+    width: 1100px;
+    height: 382px;
+    overflow: hidden;
+    position: relative;
+}
+.gs1{
+    width: 3302px;
+    position: absolute;
+}
+.prev{
+    background: url("../images/翡翠掌学/goleft.png")no-repeat;
+    height: 58px;
+    width: 58px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+}
+.prev:hover{
+    background-position: -58px 0;
+}
+.next{
+    background: url("../images/翡翠掌学/goright.png")no-repeat;
+    height: 58px;
+    background-position: -58px 0;
+    width: 58px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+}
+.next:hover{
+    background-position: 0 0;
+}
+
+/*====cont3======*/
+.cont3{
+    background: #221236;
+    width: 100%;
+    height: 1000px;
+    overflow: hidden;
+}
+.cont3 h2{
+    margin-top: 100px;
+    color: #ffffff;
+}
+.qy{
+    width: 960px;
+    margin: 100px auto;
+    position: relative;
+}
+.ul3 li{
+    width: 400px;
+    margin-left: 80px;
+    float: left;
+    margin-top: 45px;
+    font-size: 18px;
+    color: #ffffff;
+}
+.ul3 li p{
+    margin-left: 90px;
+    margin-top: 20px;
+}
+.qy .no{
+    display: inline-block;
+    float: left;
+    background: url("../images/翡翠掌学/jiazhi_quanquan.png")no-repeat;
+    height: 74px;
+    width: 74px;
+    text-align: center;
+    line-height: 74px;
+    font-style: normal;
+}
+.qy i{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+.lt{
+    background: url("../images/翡翠掌学/jiazhi_border_11.png")no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.lt:hover{
+    background: url("../images/翡翠掌学/jiazhi_border_12.png")no-repeat;
+}
+.rt{
+    background: url("../images/翡翠掌学/jiazhi_border_21.png")no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.rt:hover{
+    background: url("../images/翡翠掌学/jiazhi_border_22.png")no-repeat;
+}
+.rb{
+    background: url("../images/翡翠掌学/jiazhi_border_31.png")no-repeat;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+}
+.rb:hover{
+    background: url("../images/翡翠掌学/jiazhi_border_32.png")no-repeat;
+}
+.lb{
+    background: url("../images/翡翠掌学/jiazhi_border_41.png")no-repeat;
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+}
+.lb:hover{
+    background: url("../images/翡翠掌学/jiazhi_border_42.png")no-repeat;
+}
+/*============cont4===============*/
+.cont4{
+    background: #f1f2f6;
+    width: 100%;
+    overflow: hidden;
+}
+.cont4-cont{
+    margin: 80px auto;
+    width: 890px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+.cont4-txt{
+    position: absolute;
+    width: 1800px;
+}
+.cont4 .ul4{
+    width: 890px;
+    float: left;
+}
+.cont4 .ul4.now{
+    display: block;
+}
+.cont4 .ul4 li{
+    border-bottom: 1px dashed #CCCCCC;
+    line-height: 36px;
+}
+.cont4 .p3{
+    text-indent: 2em;
+    font-size: 16px;
+}
+.cont4 ol{
+    width: 200px;
+    margin: auto;
+}
+.cont4 ol li{
+    background: url("../images/翡翠掌学/xiaoniaoyun_btn.png")no-repeat;
+    height: 8px;
+    width: 78px;
+    float: left;
+    background-position: 0 -8px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+.i1{
+    display:block;
+    background: url("../images/翡翠掌学/xiaoniaoyun_btn.png")no-repeat;
+    height: 8px;
+    width: 0;
+    transition: all .5s;
+}
+.left{
+    margin-left: 80px;
+}
+.right{
+    margin-right: 80px;
+}
+.cont4 ol li.now .i1{
+    width: 78px;
+    margin-left: 0;
+}
+.mouse{
+    background: url("../images/翡翠掌学/xiaoniaoyun_scrollon.png")no-repeat;
+    height: 90px;
+    width: 30px;
+    margin: auto;
+    position: relative;
+    bottom: -180px;
+}
+/*=========cont5========*/
+.cont5{
+    background: url("../images/翡翠掌学/app&contacts_bg.gif")no-repeat;
+    width: 100%;
+    overflow: hidden
+}
+.cont5 .inner{
+    position: relative;
+}
+.ewm{
+    margin-top: 175px;
+    position: relative;
+}
+.p4{
+    position: absolute;
+    top: 0;
+    font-size: 18px;
+    color: #ffffff;
+    width: 317px;
+    text-align: center;
+}
+.app{
+    position: absolute;
+    top: 100px;
+    left: 500px;
+    font-size: 48px;
+    color: #ffffff;
+}
+.kf{
+    margin-top: 50px;
+    margin-left: 500px;
+}
+.kf h3{
+    font-size: 24px;
+    background: url("../images/翡翠掌学/contacts_line.png")no-repeat bottom;
+    width: 380px;
+    line-height: 50px;
+}
+.kf p{
+    line-height: 40px;
+}
